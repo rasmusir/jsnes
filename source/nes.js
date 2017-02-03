@@ -160,7 +160,8 @@ JSNES.prototype = {
                 this.fpsFrameCount / ((now - this.lastFpsTime) / 1000)
             ).toFixed(2)+' FPS';
         }
-        this.ui.updateStatus(s);
+        if (this.opts.fpsPrintToConsole)
+            this.ui.updateStatus(s);
         this.fpsFrameCount = 0;
         this.lastFpsTime = now;
     },
